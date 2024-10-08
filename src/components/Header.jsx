@@ -7,15 +7,15 @@ function Header() {
     return (
         <header>
             <div>
-                <img src="plane.webp" alt="plane-logo" />
+                <img src="plane-logo.png" alt="plane-logo" />
                 <h3>Ucus Radari</h3>
             </div>
 
             <h3>{isLoading
                 ? "Ucuslar araniyor"
                 : error
-                    ? "Hata" + error
-                    : `${flights.lenght} Ucus Bulundu`}</h3>
+                    ? "Hata :" + error
+                    : `${flights.length} Ucus Bulundu`}</h3>
         </header>
     )
 }

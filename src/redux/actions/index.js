@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { options } from "../../constants";
+import axios from "axios";
 
 export const getFlights = createAsyncThunk("flights/getFlight",
     async () => {

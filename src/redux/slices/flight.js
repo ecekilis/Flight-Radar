@@ -4,14 +4,21 @@ import { getFlights } from "../actions/index";
 const initialState = {
     isLoading: true,
     error: null,
-    flights: []
+    flights: [],
+    path: []
 }
 
 
 const flightSlice = createSlice({
     name: "flights",
     initialState,
-    extrareducers: (builder) => {
+    reducers: {
+        setPath: (state, { payload }) => {
+            state.path = payload
+        },
+
+    },
+    extraReducers: (builder) => {
         builder.addCase(getFlights.pending, (state) => {
             state.isLoading = true;
         });
@@ -27,4 +34,6 @@ const flightSlice = createSlice({
     },
 })
 
+
+export const { setPath } = flightSlice.actions;
 export default flightSlice.reducer
